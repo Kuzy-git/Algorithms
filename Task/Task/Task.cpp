@@ -57,16 +57,12 @@ void task_3()
 	}
 
 }
+/// задание 4
 
 vector<int> massive() {
 	int n = 15000;
 	vector<bool> mass(n + 1, true);
 	vector<int> result(n);
-
-	for (int i = 2; i <= n; i++)
-	{
-		mass[i] = true;
-	}
 
 	for (int i = 2; i * i <= n; i++)
 	{
@@ -76,14 +72,11 @@ vector<int> massive() {
 				mass[j] = false;
 			}
 	}
-	int ind = 0;
-	for (int i = 2; i < mass.size(); i++) {
+
+	for (int i = 2; i < mass.size(); i++) 
 		if (mass[i])
-		{
-			result[ind] = i;
-			ind += 1;
-		}
-	}
+			result.push_back(i);
+
 	return result;
 }
 
