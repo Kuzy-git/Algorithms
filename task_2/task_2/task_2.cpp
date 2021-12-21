@@ -81,7 +81,7 @@ void print(vector<int>& arr, int& n) /// Вывод чисел
 vector<int> eratosthene(int &n)
 {
     vector<int> result;
-    int k = 15001;
+    int k = n*log(n)+n*log(log(n))+6;
     vector<bool> arr(k+1);
     for (int i = 2; i < k; i++)
     {
@@ -97,7 +97,7 @@ vector<int> eratosthene(int &n)
             }
     }
 
-    for (int i = 2; i < n; i++) {
+    for (int i = 2; i < k; i++) {
         if (arr[i]) {
             result.push_back(i);
         }            
@@ -110,8 +110,8 @@ int main()
 {
     setlocale(LC_ALL, "Rus"); 
     /// Задание 1
-    int n = 0;
-    task_1();  
+   int n = 0;
+     task_1();
        
     /// Задание 2
     cout << "\nВведите натуральное число - размер массива:" << endl;
@@ -126,7 +126,7 @@ int main()
     cout << "Введите натуральное число 0 < N < 15000:" << endl;
     cin >> n;
     vector<int> result =  eratosthene(n);
-    for (int i = 0; i < result.size(); i++) {
+    for (int i = 0; i < n; i++) {
             cout << result[i] << endl;    
             fout << result[i] << endl;
     }
