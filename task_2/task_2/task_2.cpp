@@ -20,12 +20,16 @@ void task_1()
         cin >> arr[i];
     }
     max = arr[0];
-    for (auto i : arr)
+   /* for (auto i : arr)
     {
         
-        if (max <= i)        
-            max = i;      
+        if (max <= i)
+            max = i;
         
+    }*/
+    for (int i = 0; i < n; i++)
+    {
+        if (max <= arr[i]) max = arr[i];
     }
     cout << "\n"<< max;
 }
@@ -132,13 +136,16 @@ int main()
     }
 
     //// Задание 4
-    vector<int> a;
+    vector<int> mass;
     int f;
     while (true)
     {
+        cout << "\n" << "Введите число: ";
         cin >> f;
-        a.push_back(f);
-        cout << "Текущий размер вектора: " << a.capacity() << "\n" << endl;
+        mass.push_back(f);
+        cout << "Capacity:  " << mass.capacity() << endl;
+        cout << "Size: " << mass.size() << endl;
+      
     }
     return 0;
 }
